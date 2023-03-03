@@ -3,6 +3,7 @@ import Home from "../pages/Home";
 import Main from "../Layout/Main";
 import Cart from "../pages/cart";
 import TopReted from "../pages/TopReted";
+import WhistList from "../pages/WhistList";
 
 export const  routers = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ export const  routers = createBrowserRouter([
             {
                 path:"/topreted",
                 element:<TopReted/>
+            },
+            {
+                path:"/whistlist",
+                element:<WhistList/>
             }
         ]
     }

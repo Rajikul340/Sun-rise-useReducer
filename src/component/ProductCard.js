@@ -7,6 +7,13 @@ import { useProduct } from "./context/ProuctProvider";
 const ProductCard = ({ product }) => {
   const { dispatch } = useProduct();
 
+
+
+  function removeFromCart(itemId) {
+    dispatch({ type: actionType.REMOVE_FROM_CART, payload: itemId });
+  }
+  
+
   return (
     <div
       className='shadow-lg rounded-3xl border  p-3 flex flex-col text-indigo-900'
@@ -34,8 +41,17 @@ const ProductCard = ({ product }) => {
           Add to cart
         </button>
         <button
+          className='bg-indigo-500 rounded-full flex-1 text-white text-bold'
+          onClick={() => removeFromCart(product._id)}
+        >
+          Remove
+        </button>
+        <button
+         onClick={() =>
+          dispatch({ type: actionType.ADD_TO_WHISTLIST, payload: product })
+        }
           title='Add to wishlist'
-          className='bg-indigo-500  py-1 px-2 rounded-full'
+          className='bg-indigo-500  px-2  rounded-full'
         >
           <BiListPlus className='text-white' />
         </button>

@@ -11,6 +11,7 @@ const ProuctProvider = ({ children }) => {
   const [state, dispatch] = useReducer(productReducer, productInitialState);
 
 
+//   console.log(state.cart);
 
   useEffect(() => {
     dispatch({ type: actionType.FETCHING_START });
@@ -25,7 +26,7 @@ const ProuctProvider = ({ children }) => {
       })
   }, []);
 
-  const value = {state};
+  const value = {state, dispatch};
 
   return (
     <PRODUCT_CONTEXT.Provider value={value}>
